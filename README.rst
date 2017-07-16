@@ -50,7 +50,6 @@ and enable kernel support from the Raspberry Pi config tool
 
     sudo raspi-config
     # 5 Interfacing Options -> P5 I2C
-    sudo reboot
 
 Read `this <https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c>`_
 for detail instructions. Note: the raspi-config interface was changed, see above.
@@ -70,7 +69,7 @@ or install from source
 
     git clone https://github.com/zhouer/Praline
     cd Praline
-    pip setup.py install
+    sudo pip setup.py install
 
 Run scripts at system boot
 --------------------------
