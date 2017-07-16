@@ -16,7 +16,7 @@ You will need:
  * An `Adafruit 128x64 OLED Bonnet for Raspberry Pi <https://learn.adafruit.com/adafruit-128x64-oled-bonnet-for-raspberry-pi/>`_ (optional)
   * You can go without the OLED and the buttons, and let this hardware wallet create and sign the transactions without confirmation.
 
-Device-side installation
+Installation
 ========================
 
 The following steps should be done on the Raspberry Pi Zero.
@@ -84,11 +84,7 @@ You can setup running the Python script at system boot by adding it into /etc/rc
 All done
 --------
 
-Now, you can un-plug all micro-USB cords, and plug one micro-USB cord back to the **USB (NOT PWR IN)** port.
+Un-plug all micro-USB cords, and plug one micro-USB cord back to the **USB (NOT PWR IN)** port.
 It will take about 30 seconds to boot into Linux and run the Python script.
 
-Host-side installation
-======================
-
-You will need a host-side application to talk with the Praline,
-see instructions on `Praline-host <https://github.com/zhouer/Praline-host>`_
+Now, you will need the host-side application `Praline-host <https://github.com/zhouer/Praline-host>`_ to talk with the Praline.
