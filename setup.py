@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='praline',
-    version='0.0.5',
+    version='0.0.6',
     description='Bitcoin hardware wallet',
     url='https://github.com/zhouer/Praline/',
     author='En-Ran Zhou',
