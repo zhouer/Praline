@@ -1,0 +1,7 @@
+*.pyc
+*.egg-info
+build
+dist
+MANIFEST
+db
+node_modules
