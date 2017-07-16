@@ -13,8 +13,10 @@ You will need:
 
  * A `Respberry Pi Zero <https://www.raspberrypi.org/products/raspberry-pi-zero/>`_ or a `Raspberry Pi Zero W <https://www.raspberrypi.org/products/raspberry-pi-zero-w/>`_
   * Raspberry Pi 2/3 **DOES NOT** work because they cannot work in USB gadget mode.
- * An `Adafruit 128x64 OLED Bonnet for Raspberry Pi <https://learn.adafruit.com/adafruit-128x64-oled-bonnet-for-raspberry-pi/>`_ (optional)
+ * An `Adafruit 128x64 OLED Bonnet for Raspberry Pi <https://www.adafruit.com/product/3531>`_ (optional)
   * You can go without the OLED and the buttons, and let this hardware wallet create and sign the transactions without confirmation.
+ * A `2x20-pin Strip Dual Male Header <https://www.adafruit.com/product/2822>`_ (optional)
+  * You might also need this if your Raspberry Pi Zero doesn't come with the 2x20 pins, and you will have to solder this manually.
 
 Installation
 ========================
