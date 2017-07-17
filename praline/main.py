@@ -109,7 +109,7 @@ def main():
             cmd = json.loads(ser.readline().decode('utf-8'))
 
             if cmd['method'] == 'version':
-                sendSerialPort(ser, 'Praline 0.0.2', cmd['id'])
+                sendSerialPort(ser, 'Praline 0.0.7', cmd['id'])
             elif cmd['method'] == 'newaddress':
                 sendSerialPort(ser, getNewAddress(),  cmd['id'])
             elif cmd['method'] == 'listaddress':
