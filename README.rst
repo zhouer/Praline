@@ -40,13 +40,7 @@ for detail instructions, but stop after finish step 1, **DO NOT** enable logging
 Enable I2C
 ----------
 
-Install I2C utils
-
-.. code-block:: sh
-
-    sudo apt-get install i2c-tools python-smbus
-
-and enable kernel support from the Raspberry Pi config tool
+Enable kernel support from the Raspberry Pi config tool
 
 .. code-block:: sh
 
@@ -54,7 +48,7 @@ and enable kernel support from the Raspberry Pi config tool
     # 5 Interfacing Options -> P5 I2C
 
 Read `this <https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c>`_
-for detail instructions. Note: the raspi-config interface was changed, see above.
+for detail instructions. Note: the location of I2C was changed, see above.
 
 Install Python scripts
 ----------------------
