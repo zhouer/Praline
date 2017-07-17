@@ -9,7 +9,7 @@ setup(
     author_email='zhouer@gmail.com',
     license='MIT',
     packages=["praline"],
-    install_requires=['bitcoin', 'leveldb', 'pyserial', 'Pillow', 'RPi.GPIO', 'Adafruit_SSD1306'],
+    install_requires=['bitcoin', 'leveldb', 'pyserial', 'Pillow', 'RPi.GPIO', 'smbus2', 'Adafruit_SSD1306'],
     entry_points={
         'console_scripts': ['praline=praline.main:main']
     }

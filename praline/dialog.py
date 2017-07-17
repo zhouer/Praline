@@ -4,6 +4,7 @@ import time
 
 import Adafruit_SSD1306
 import RPi.GPIO as GPIO
+import smbus2
 
 from PIL import Image
 from PIL import ImageDraw
@@ -19,7 +20,19 @@ _pins = { 'A': 5,
 
 _previousPress = 0
 
+def detect():
+    try:
+        # The I2C address of the SSD1306 OLED controller is 0x3c
+        smbus2.SMBus(1).read_byte(0x3c)
+    except:
+        return False
+
+    return True
+
 def init():
+    if not detect():
+        return False
+
     GPIO.setmode(GPIO.BCM) 
 
     for pin in _pins.values():
@@ -40,6 +53,8 @@ def init():
 
     global _selected
     _selected = False
+
+    return True
 
 def cleanup():
     GPIO.cleanup()
@@ -126,10 +141,12 @@ def showSendDialog(address, amount):
     return _selected
 
 def main():
-    init()
-    print(showSendDialog('0123456789012345678901234567890123', 123412345678))
-    _disp.clear()
-    _disp.display()
+    if init():
+        print(showSendDialog('0123456789012345678901234567890123', 123412345678))
+        _disp.clear()
+        _disp.display()
+    else:
+        print('OLED controller not found!')
 
 
 if __name__ == '__main__':

@@ -6,8 +6,6 @@ import serial
 
 from praline import dialog
 
-dialog.init()
-
 def importAddress(priv):
     addr = bitcoin.privkey_to_address(priv)
     obj = {'address': addr, 'privateKey': priv}
@@ -103,6 +101,9 @@ def sendSerialPort(ser, result, rid):
 
 def main():
     ser = serial.Serial('/dev/ttyGS0', 115200)
+
+    showDialog = dialog.init()
+
     while True:
         try:
             cmd = json.loads(ser.readline().decode('utf-8'))
@@ -122,7 +123,8 @@ def main():
                 fee = cmd['params'][2]
                 utxos = cmd['params'][3]
 
-                if dialog.showSendDialog(addr, amount):
+                # create transaction without user confirmation if the OLED is not available
+                if not showDialog or dialog.showSendDialog(addr, amount):
                     sendSerialPort(ser, send(addr, amount, fee, utxos), cmd['id'])
                 else:
                     sendSerialPort(ser, '', cmd['id'])
